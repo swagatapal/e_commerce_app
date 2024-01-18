@@ -7,7 +7,7 @@ import '../../Widget_Common/bg_widget.dart';
 import '../../Widget_Common/customTextField_widget.dart';
 import '../../Widget_Common/ourButton_widget.dart';
 import '../../consts/list.dart';
-import '../Home_Screen/home_screen.dart';
+import '../Home_Screen/Home.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
@@ -80,7 +80,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   ),
                   5.heightBox,
                   ourButton(color:isCheck == true? redColor:lightGrey, title: signup, textColor: whiteColor, onPress: (){
-                    Get.to(()=>HomeScreen());
+                    Get.to(()=>Home());
                   })
                       .box.width(context.screenWidth - 50).make(),
 

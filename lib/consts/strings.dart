@@ -20,3 +20,16 @@ const allreadyHaveAccount = "Allready Have an account ? ";
 
 const home = "Home", categories = "Categories", cart = "Cart", account = "Account";
 
+
+const searchanything = "Search anything...";
+const todaydeal = "Today's Deal";
+const flashsale = "Flash sale";
+ const topSellers = "Top Sellers";
+ const brand = "Brand";
+ const topCategories = "Top Categories";
+ const feautureCategories = "Featured Categories";
+
+
+
+
+

@@ -4,7 +4,7 @@ import 'package:e_commerce_app/Widget_Common/customTextField_widget.dart';
 import 'package:e_commerce_app/Widget_Common/ourButton_widget.dart';
 import 'package:e_commerce_app/consts/consts.dart';
 import 'package:e_commerce_app/consts/list.dart';
-import 'package:e_commerce_app/views/Home_Screen/home_screen.dart';
+import 'package:e_commerce_app/views/Home_Screen/Home.dart';
 import 'package:e_commerce_app/views/auth_screen/signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -35,7 +35,7 @@ class LoginScreen extends StatelessWidget {
                 ),
                 5.heightBox,
                 ourButton(color: redColor, title: login, textColor: whiteColor, onPress: (){
-                  Get.to(()=>HomeScreen());
+                  Get.to(()=>Home());
                 })
                 .box.width(context.screenWidth - 50).make(),
                 5.heightBox,

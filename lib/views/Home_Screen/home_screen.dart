@@ -1,56 +1,67 @@
-import 'package:e_commerce_app/Controllers/home_controller.dart';
+import 'package:e_commerce_app/Widget_Common/home_buttons.dart';
+import 'package:e_commerce_app/consts/colors.dart';
 import 'package:e_commerce_app/consts/consts.dart';
+import 'package:e_commerce_app/consts/list.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_instance/src/extension_instance.dart';
+
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-
-    //init home controller
-    var controller = Get.put(HomeController());
-
-    var navbarItems = [
-      BottomNavigationBarItem(icon: Image.asset(icHome, width: 26,), label:home),
-      BottomNavigationBarItem(icon: Image.asset(icCategories, width: 26,), label:categories),
-      BottomNavigationBarItem(icon: Image.asset(icCart, width: 26,), label:cart),
-      BottomNavigationBarItem(icon: Image.asset(icProfile, width: 26,), label:account),
-    ];
-
-    var navBody = [
-      Container(color: Colors.blue,),
-      Container(color: Colors.amber,),
-      Container(color: Colors.purple,),
-      Container(color: Colors.cyan,),
-
-
-    ];
-
-    return Scaffold(
-      body: Column(
+    return Container(
+      padding: const EdgeInsets.all(8.0),
+      width: context.screenWidth,
+      height: context.screenHeight,
+      color: lightGrey,
+      child: SafeArea(
+        child:Column(
           children: [
-            Obx(()=> Expanded(child: navBody.elementAt(controller.currentNavIndex.value),))
-          ]
-      ),
-      bottomNavigationBar: Obx(()=>
-        BottomNavigationBar(
-          currentIndex: controller.currentNavIndex.value,
-          selectedItemColor: redColor,
-            selectedLabelStyle: const TextStyle(fontFamily: semibold),
-            type: BottomNavigationBarType.fixed,
-            backgroundColor: whiteColor,
-            items: navbarItems,
-            onTap: (value){
-              controller.currentNavIndex.value = value;
-            },
-        ),
+            Container(
+              alignment: Alignment.center,
+              height: 60,
+              color: lightGrey,
+              child: TextFormField(
+                decoration: InputDecoration(
+                  suffixIcon: Icon(Icons.search),
+                  filled: true,
+                  fillColor: whiteColor,
+                  hintText: searchanything,
+                  hintStyle: TextStyle(color: textfieldGrey),
 
-      ),
+                ),
+              ),
+            ),
+           
+           VxSwiper.builder(
+            aspectRatio: 16 / 9,
+            autoPlay: true,
+            height: 150,
+            enlargeCenterPage: true,
+            
+            itemCount: sliderList.length, itemBuilder: (context, index){
+            return Image.asset(
+                sliderList[index],
+                fit: BoxFit.fill,
+            ).box.rounded.clip(Clip.antiAlias).margin(EdgeInsets.symmetric(horizontal: 8)).make();
+           }),
 
+
+           10.heightBox,
+           Row(
+            children: List.generate(2, (index) => homeButtons(
+              height: context.screenHeight*0.2,
+              width: context.screenWidth/2.5,
+              iCon: index==0? icTodaysDeal:icFlashDeal,
+              title: index == 0? todaydeal:flashsale,
+            )),
+           )
+
+          
+          ],
+          )
+         ),
     );
   }
 }
