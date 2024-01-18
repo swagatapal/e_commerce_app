@@ -1,3 +1,22 @@
 const appname = "eMart";
 const appversion = "Version 1.0.0";
-const credits = "@Baaba Devs";
+const credits = "@Swagata Pal";
+const email = "email";
+const emailHint = "admin@example.com";
+const password = "Password";
+const retypePassword = "ReType Password";
+const name = "Name";
+const nameHint = "Swagata Pal";
+const passwordHint = "********";
+const forgetPass = "Forget Password";
+const login = "Log in";
+const signup = "Sign up";
+const createNewAccount = "Or, Create a new account";
+const loginWith = "Log in with";
+const privacyPolicy = "Privacy Policy";
+const termAndCond = "Terms and Conditions";
+const allreadyHaveAccount = "Allready Have an account ? ";
+
+
+const home = "Home", categories = "Categories", cart = "Cart", account = "Account";
+
