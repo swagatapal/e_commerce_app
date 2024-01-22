@@ -49,6 +49,22 @@ const womenClothing = "Women Clothing",
       furniture = "Furniture";
 
 
+const video = "Video",
+    reviews = "Reviews",
+    sellerpolicy = "Seller Policy",
+    returnPolicy = "Return Policy",
+    supportPolicy = "Support Policy",
+    productsyoumaylike = "Products You May also Like";
+
+
+const logout = "Log out";
+
+
+//Profile String
+
+const wishlist = "My Wishlist",
+    order = "My Order",
+    messages = "My Messages";
 
 
 
