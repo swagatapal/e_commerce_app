@@ -66,7 +66,9 @@ const logout = "Log out";
 
 const wishlist = "My Wishlist",
     order = "My Order",
-    messages = "My Messages";
+    messages = "My Messages",
+    oldpass = "old password",
+    newpass = "new password";
 
 
 
