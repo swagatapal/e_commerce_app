@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/Controllers/home_controller.dart';
+import 'package:e_commerce_app/Widget_Common/exit_dialog.dart';
 import 'package:e_commerce_app/consts/consts.dart';
 import 'package:e_commerce_app/views/Category_screen/Category_screen.dart';
 import 'package:e_commerce_app/views/Home_Screen/home_screen.dart';
@@ -32,27 +33,35 @@ class Home extends StatelessWidget {
       const ProfileScreen(),
     ];
 
-    return Scaffold(
-      body: Column(
-          children: [
-            Obx(()=> Expanded(child: navBody.elementAt(controller.currentNavIndex.value),))
-          ]
-      ),
-      bottomNavigationBar: Obx(()=>
-        BottomNavigationBar(
-          currentIndex: controller.currentNavIndex.value,
-          selectedItemColor: redColor,
-            selectedLabelStyle: const TextStyle(fontFamily: semibold),
-            type: BottomNavigationBarType.fixed,
-            backgroundColor: whiteColor,
-            items: navbarItems,
-            onTap: (value){
-              controller.currentNavIndex.value = value;
-            },
+    return WillPopScope(
+      onWillPop: () async{
+        showDialog(
+            barrierDismissible: false,
+            context: context, builder: (context)=>exitDialog(context));
+        return false;
+      },
+      child: Scaffold(
+        body: Column(
+            children: [
+              Obx(()=> Expanded(child: navBody.elementAt(controller.currentNavIndex.value),))
+            ]
+        ),
+        bottomNavigationBar: Obx(()=>
+          BottomNavigationBar(
+            currentIndex: controller.currentNavIndex.value,
+            selectedItemColor: redColor,
+              selectedLabelStyle: const TextStyle(fontFamily: semibold),
+              type: BottomNavigationBarType.fixed,
+              backgroundColor: whiteColor,
+              items: navbarItems,
+              onTap: (value){
+                controller.currentNavIndex.value = value;
+              },
+          ),
+
         ),
 
       ),
-
     );
   }
 }
