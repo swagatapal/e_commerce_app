@@ -30,7 +30,7 @@ class ItemDetails extends StatelessWidget {
           title: title!.text.fontFamily(bold).make(),
           actions: [
             IconButton(onPressed: (){}, icon: const Icon(Icons.share,)),
-            IconButton(onPressed: (){}, icon: const Icon(Icons.favorite_outline,))
+            IconButton(onPressed: (){}, icon: const Icon(Icons.favorite_outlined,))
           ],
         ),
         body: Column(
