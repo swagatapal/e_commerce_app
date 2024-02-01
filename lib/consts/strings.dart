@@ -71,6 +71,7 @@ const wishlist = "My Wishlist",
     newpass = "new password";
 
 
+const paypal = "Paypal", stripe = "Stripe", cod = "Cash On Delivery";
 
 
 
