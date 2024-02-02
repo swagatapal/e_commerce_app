@@ -77,4 +77,11 @@ class cartController extends GetxController{
   }
 
 
+  clearCart(){
+    for(var i = 0; i<productSnapshot.length; i++){
+      firestore.collection(cartCollection).doc(productSnapshot[i].id).delete();
+    }
+  }
+
+
 }

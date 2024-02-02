@@ -7,6 +7,9 @@ import 'package:e_commerce_app/services/firestore_service.dart';
 import 'package:e_commerce_app/views/Profile_Screen/component/details.card.dart';
 import 'package:e_commerce_app/views/Profile_Screen/editProfile_screen.dart';
 import 'package:e_commerce_app/views/auth_screen/login_screen.dart';
+import 'package:e_commerce_app/views/chat_screen/messaging_screen.dart';
+import 'package:e_commerce_app/views/orders_screen/orders_screen.dart';
+import 'package:e_commerce_app/views/wishlist_screen/wishlist_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -100,6 +103,19 @@ class ProfileScreen extends StatelessWidget {
                           itemCount: profileButtonList.length,
                           itemBuilder: (BuildContext context, int index){
                             return ListTile(
+                              onTap: (){
+                                switch(index){
+                                  case 0:
+                                    Get.to(()=>WishlistScreen());
+                                    break;
+                                  case 1:
+                                    Get.to(()=>OrdersScreen());
+                                    break;
+                                  case 2:
+                                    Get.to(()=>MessagesScreen());
+                                    break;
+                                }
+                              },
                               leading: Image.asset(
                                 profileButtonIcon[index],
                                 width: 22,

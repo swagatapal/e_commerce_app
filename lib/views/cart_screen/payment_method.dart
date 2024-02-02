@@ -4,6 +4,7 @@ import 'package:e_commerce_app/Controllers/cart_controller.dart';
 import 'package:e_commerce_app/Widget_Common/loading_indicator.dart';
 import 'package:e_commerce_app/consts/consts.dart';
 import 'package:e_commerce_app/consts/list.dart';
+import 'package:e_commerce_app/views/Home_Screen/Home.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -26,8 +27,14 @@ class PaymentMethod extends StatelessWidget {
             child: LoadingIndicator(),
           )
               :ourButton(
-              onPress: (){
-                controller.placeMyOrder(orderPaymentMethod: paymentMethods[controller.paymentIndex.value], totalAmount: controller.totalP.value);
+              onPress: () async {
+                await controller.placeMyOrder(orderPaymentMethod:
+                paymentMethods[controller.paymentIndex.value],
+                    totalAmount: controller.totalP.value);
+
+                await controller.clearCart();
+                VxToast.show(context, msg: "Order Placed Succesfully");
+                Get.offAll(const Home());
               },
               color: redColor,
               textColor: whiteColor,

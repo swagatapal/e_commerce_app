@@ -32,4 +32,17 @@ class FireStoreServices{
 
   }
 
+  static getAllOrders(){
+    return firestore.collection(orderCollection).where('order_by', isEqualTo: currentUser!.uid).snapshots();
+  }
+
+  static getAllWishlist(){
+    return firestore.collection(productsCollection).where('p_wishlist', arrayContains: currentUser!.uid).snapshots();
+  }
+
+  static getAllMessages(){
+    return firestore.collection(chatsCollection).where('from_id', isEqualTo: currentUser!.uid).snapshots();
+
+  }
+
 }
